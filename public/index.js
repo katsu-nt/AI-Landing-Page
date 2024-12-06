@@ -1,3 +1,4 @@
+//header click
 const navLinks = document.querySelectorAll('header nav ul li a');
 
 navLinks.forEach(link => {
@@ -9,3 +10,25 @@ navLinks.forEach(link => {
         event.target.classList.remove('text-white');
     });
 });
+
+//count
+function countUpNumbers() {
+    const numberElements = document.querySelectorAll('.scope-number');
+
+    numberElements.forEach(numberElement => {
+        let targetNumber = parseInt(numberElement.textContent);
+        let currentNumber = 0;
+
+        const intervalId = setInterval(() => {
+            currentNumber++;
+            numberElement.textContent = currentNumber;
+
+            if (currentNumber >= targetNumber) {
+                clearInterval(intervalId);
+            }
+        }, 100);
+    });
+}
+
+countUpNumbers()
+setInterval(countUpNumbers,11000)
