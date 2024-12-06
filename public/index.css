@@ -1,0 +1,15 @@
+*,
+body {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#about-us{
+    background-image: url("./imgs/banner.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
