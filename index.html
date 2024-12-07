@@ -22,6 +22,9 @@
               "50%": { transform: "translateY(-10px)" },
               "100%": { transform: "translateY(0)" },
             },
+            scroll: {
+              "0%": { transform: "translateX(0)" },
+            },
           },
           animation: {
             wave: "wave 1s ease-in-out infinite",
@@ -47,6 +50,7 @@
         }
       }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -214,69 +218,169 @@
             </div>
           </div>
         </div>
+
+      </section>
+      <section class="p-50 my-bg-white text-md md:text-2xl">
         <div class="flex justify-center items-center text-justify">
-          <div class="w-full sm:w-4/5 lg:w-3/5">
-            <h1 class="text-white uppercase mb-10 text-left md:text-center font-bold mb:10 md:mb-20 text-xl md:text-2xl xl:text-3xl ">
-              <span class="text-my-red"><i class="fa-solid fa-minus"></i></span>
+          <div class="w-full sm:w-4/5">
+            <h1
+              class="text-my-blue uppercase mb-10 text-left md:text-center font-bold mb-10 text-xl md:text-2xl xl:text-3xl"
+            >
               Quy mô của hội nghị quốc tế
             </h1>
           </div>
         </div>
-        <div class="flex justify-center items-center text-justify">
-          <div class="w-full sm:w-4/5 lg:w-3/5 flex flex-wrap">
-            <div class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top">
+        <div class="flex justify-center items-center text-justify mb-10">
+          <div class="w-full sm:w-4/5 flex flex-wrap">
+            <div
+              class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top"
+            >
               <div>
                 <div
                   class="text-my-red text-2xl md:text-4xl text-center mb-3 flex justify-start md:justify-center items-center gap-2"
                 >
-                  <span class="block font-extrabold scope-number">100 </span><span class="text-md md:text-xl block"><i class="fa-solid fa-plus"></i></span>
+                  <span class="block font-extrabold scope-number">100 </span
+                  ><span class="text-md md:text-xl block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
                 </div>
-                <div class="text-white text-left md:text-justify font-semibold mb-3 md:mb-5">
+                <div
+                  class="text-my-blue text-left md:text-justify font-semibold mb-3 md:mb-5"
+                >
                   Lãnh đạo cấp cao
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top">
+            <div
+              class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top"
+            >
               <div>
                 <div
                   class="text-my-red text-2xl md:text-4xl text-center mb-3 flex justify-start md:justify-center items-center gap-2"
                 >
-                  <span class="block font-extrabold scope-number">10 </span><span class="text-md md:text-xl block"><i class="fa-solid fa-plus"></i></span>
+                  <span class="block font-extrabold scope-number">10 </span
+                  ><span class="text-md md:text-xl block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
                 </div>
-                <div class="text-white text-left md:text-justify font-semibold mb-3 md:mb-5">
+                <div
+                  class="text-my-blue text-left md:text-justify font-semibold mb-3 md:mb-5"
+                >
                   Chuyên gia AI Health hàng đầu từ quốc tế & Vietnam
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top">
+            <div
+              class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top"
+            >
               <div>
                 <div
                   class="text-my-red text-2xl md:text-4xl text-center mb-3 flex justify-start md:justify-center items-center gap-2"
                 >
-                  <span class="block font-extrabold scope-number">30 </span><span class="text-md md:text-xl block"><i class="fa-solid fa-plus"></i></span>
+                  <span class="block font-extrabold scope-number">30 </span
+                  ><span class="text-md md:text-xl block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
                 </div>
-                <div class="text-white text-left md:text-justify font-semibold mb-3 md:mb-5">
+                <div
+                  class="text-my-blue text-left md:text-justify font-semibold mb-3 md:mb-5"
+                >
                   Đại diện lãnh đạo ngành các tỉnh thành phía Nam
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top">
+            <div
+              class="w-full md:w-1/2 xl:w-1/4 md:px-5 flex justify-start md:justify-center items-top"
+            >
               <div>
                 <div
                   class="text-my-red text-2xl md:text-4xl text-center mb-3 flex justify-start md:justify-center items-center gap-2"
                 >
-                  <span class="block font-extrabold scope-number">20 </span><span class="text-md md:text-xl block"><i class="fa-solid fa-plus"></i></span>
+                  <span class="block font-extrabold scope-number">20 </span
+                  ><span class="text-md md:text-xl block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
                 </div>
-                <div class="text-white text-left md:text-justify font-semibold mb-3 md:mb-5">
+                <div
+                  class="text-my-blue text-left md:text-justify font-semibold mb-3 md:mb-5"
+                >
                   AI showcase booth
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="p-50 my-bg-white text-md md:text-2xl">
-        
+        <div class="flex justify-center items-center text-justify">
+          <div class="w-full sm:w-4/5">
+            <h1
+              class="text-my-blue uppercase mb-10 text-left font-bold mb-10 text-lg md:text-xl xl:text-2xl"
+            >
+              <span class="text-my-red"><i class="fa-solid fa-minus"></i></span>
+              Đơn vị chủ trì
+            </h1>
+          </div>
+        </div>
+        <div class="flex justify-center items-center text-justify mb-10">
+          <div class="w-full sm:w-4/5">
+            <div class="relative overflow-hidden">
+              <div class="flex gap-8 scrollerContainer">
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center items-center text-justify">
+          <div class="w-full sm:w-4/5">
+            <h1
+              class="text-my-blue uppercase mb-10 text-left font-bold mb-10 text-lg md:text-xl xl:text-2xl"
+            >
+              <span class="text-my-red"><i class="fa-solid fa-minus"></i></span>
+              Đối tác tài trợ
+            </h1>
+          </div>
+        </div>
+        <div class="flex justify-center items-center text-justify mb-10">
+          <div class="w-full sm:w-4/5">
+            <div class="relative overflow-hidden">
+              <div class="flex gap-8 scrollerContainer-02">
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+                <article><img src="./public/imgs/DXC.png" alt="Brand 1" class="h-16 md:h-32 w-auto"></article>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center items-center text-justify">
+          <div class="w-full sm:w-4/5">
+            <h1
+              class="text-my-blue uppercase mb-10 text-left font-bold mb-10 text-lg md:text-xl xl:text-2xl"
+            >
+              <span class="text-my-red"><i class="fa-solid fa-minus"></i></span>
+              Đơn vị thực hiện
+            </h1>
+          </div>
+        </div>
+        <div class="flex justify-center items-center text-justify">
+          <div class="w-full sm:w-4/5">
+            <img
+              src="public/imgs/2.jpg"
+              alt="Brand 1"
+              class="h-20 md:h-36 w-auto rounded-full"
+            />
+          </div>
+        </div>
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
