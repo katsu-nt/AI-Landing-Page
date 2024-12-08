@@ -26,12 +26,12 @@ function countUpNumbers() {
             if (currentNumber >= targetNumber) {
                 clearInterval(intervalId);
             }
-        }, 100);
+        }, 10);
     });
 }
 
 countUpNumbers()
-setInterval(countUpNumbers, 11000)
+setInterval(countUpNumbers, 12000)
 
 //infinite loop
 // Configurations
