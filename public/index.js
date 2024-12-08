@@ -35,61 +35,152 @@ setInterval(countUpNumbers, 12000)
 
 //infinite loop
 // Configurations
+// const config = {
+//   scrollerSpeed: 3, // seconds
+//   scrollerTransitionSpeed: 2, // seconds, must be <= scrollerSpeed
+// };
+
+// function updateScrollerItemsViewable() {
+//   if (window.innerWidth >= 1024) {
+//     return 4;
+//   } else {
+//     return 3;
+//   }
+// }
+
+// function initializeScroller(containerSelector, groupClass) {
+//   const $container = $(containerSelector);
+//   const $articles = $container.find('> article');
+
+//   // Clone elements to enable infinite scroll
+//   const scrollerItemsHTML = $articles.map((_, el) => $(el).prop('outerHTML')).get().join('');
+//   $container.html(scrollerItemsHTML);
+
+//   // Wrap items in a specific group class to avoid conflicts
+//   $container.find('> article').wrapAll(`<div class="${groupClass}" />`);
+//   const $scrollerGroup = $container.find(`.${groupClass}`);
+
+//   return { $container, $scrollerGroup };
+// }
+
+// function setupScroller(scroller, itemsViewable) {
+//   const { $container, $scrollerGroup } = scroller;
+
+//   const scrollerWidth = $container.width();
+//   const itemWidth = scrollerWidth / itemsViewable;
+//   const scrollerCount = $scrollerGroup.find('> article').length;
+
+//   $scrollerGroup.find('> article').css({
+//     width: `${itemWidth}px`,
+//     transition: `margin ${config.scrollerTransitionSpeed}s`,
+//   });
+//   $scrollerGroup.css('width', `${scrollerCount * itemWidth}px`);
+
+//   scroller.itemWidth = itemWidth;
+//   scroller.leftMargin = -itemWidth;
+// }
+
+// function startScroller(scroller) {
+//   const { $scrollerGroup } = scroller;
+
+//   function rotate() {
+//     const $first = $scrollerGroup.find('> article:first-child');
+//     $first.css('margin-left', `${scroller.leftMargin}px`);
+
+//     setTimeout(() => {
+//       $first.css('margin-left', '0');
+//       $scrollerGroup.append($first);
+//     }, config.scrollerTransitionSpeed * 1000);
+//   }
+
+//   scroller.interval = setInterval(rotate, config.scrollerSpeed * 1000);
+// }
+
+// function resetScroller(scroller, itemsViewable) {
+//   clearInterval(scroller.interval);
+//   setupScroller(scroller, itemsViewable);
+//   startScroller(scroller);
+// }
+
+// function initializeResponsiveScroller() {
+//   const itemsViewable = updateScrollerItemsViewable();
+
+//   resetScroller(scroller1, itemsViewable);
+//   resetScroller(scroller2, itemsViewable);
+// }
+
+// // Initialize scrollers with unique group classes
+// let scroller1 = initializeScroller('.scrollerContainer', 'scrollerGroup');
+// let scroller2 = initializeScroller('.scrollerContainer-02', 'scrollerGroup-02');
+
+// // On document ready
+// $(document).ready(() => {
+//   initializeResponsiveScroller();
+
+//   // Debounce resize to avoid frequent updates
+//   let resizeTimeout;
+//   $(window).resize(() => {
+//     clearTimeout(resizeTimeout);
+//     resizeTimeout = setTimeout(() => initializeResponsiveScroller(), 200);
+//   });
+// });
+// Infinite loop
+// Configurations
 const config = {
   scrollerSpeed: 3, // seconds
   scrollerTransitionSpeed: 2, // seconds, must be <= scrollerSpeed
 };
 
 function updateScrollerItemsViewable() {
-  if (window.innerWidth >= 1024) {
-    return 4;
-  } else {
-    return 3;
-  }
+  return window.innerWidth >= 1024 ? 4 : 3;
 }
 
 function initializeScroller(containerSelector, groupClass) {
-  const $container = $(containerSelector);
-  const $articles = $container.find('> article');
+  const container = document.querySelector(containerSelector);
+  const articles = Array.from(container.children);
 
   // Clone elements to enable infinite scroll
-  const scrollerItemsHTML = $articles.map((_, el) => $(el).prop('outerHTML')).get().join('');
-  $container.html(scrollerItemsHTML);
+  const scrollerItemsHTML = articles.map(article => article.outerHTML).join('');
+  container.innerHTML = scrollerItemsHTML;
 
   // Wrap items in a specific group class to avoid conflicts
-  $container.find('> article').wrapAll(`<div class="${groupClass}" />`);
-  const $scrollerGroup = $container.find(`.${groupClass}`);
+  const wrapper = document.createElement('div');
+  wrapper.className = groupClass;
+  wrapper.innerHTML = container.innerHTML;
+  container.innerHTML = '';
+  container.appendChild(wrapper);
 
-  return { $container, $scrollerGroup };
+  const scrollerGroup = container.querySelector(`.${groupClass}`);
+  return { container, scrollerGroup };
 }
 
 function setupScroller(scroller, itemsViewable) {
-  const { $container, $scrollerGroup } = scroller;
+  const { container, scrollerGroup } = scroller;
 
-  const scrollerWidth = $container.width();
+  const scrollerWidth = container.offsetWidth;
   const itemWidth = scrollerWidth / itemsViewable;
-  const scrollerCount = $scrollerGroup.find('> article').length;
+  const scrollerCount = scrollerGroup.children.length;
 
-  $scrollerGroup.find('> article').css({
-    width: `${itemWidth}px`,
-    transition: `margin ${config.scrollerTransitionSpeed}s`,
+  Array.from(scrollerGroup.children).forEach(article => {
+    article.style.width = `${itemWidth}px`;
+    article.style.transition = `margin ${config.scrollerTransitionSpeed}s`;
   });
-  $scrollerGroup.css('width', `${scrollerCount * itemWidth}px`);
+  scrollerGroup.style.width = `${scrollerCount * itemWidth}px`;
 
   scroller.itemWidth = itemWidth;
   scroller.leftMargin = -itemWidth;
 }
 
 function startScroller(scroller) {
-  const { $scrollerGroup } = scroller;
+  const { scrollerGroup } = scroller;
 
   function rotate() {
-    const $first = $scrollerGroup.find('> article:first-child');
-    $first.css('margin-left', `${scroller.leftMargin}px`);
+    const firstChild = scrollerGroup.firstElementChild;
+    firstChild.style.marginLeft = `${scroller.leftMargin}px`;
 
     setTimeout(() => {
-      $first.css('margin-left', '0');
-      $scrollerGroup.append($first);
+      firstChild.style.marginLeft = '0';
+      scrollerGroup.appendChild(firstChild);
     }, config.scrollerTransitionSpeed * 1000);
   }
 
@@ -113,13 +204,13 @@ function initializeResponsiveScroller() {
 let scroller1 = initializeScroller('.scrollerContainer', 'scrollerGroup');
 let scroller2 = initializeScroller('.scrollerContainer-02', 'scrollerGroup-02');
 
-// On document ready
-$(document).ready(() => {
+// On DOM content loaded
+document.addEventListener('DOMContentLoaded', () => {
   initializeResponsiveScroller();
 
   // Debounce resize to avoid frequent updates
   let resizeTimeout;
-  $(window).resize(() => {
+  window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => initializeResponsiveScroller(), 200);
   });
