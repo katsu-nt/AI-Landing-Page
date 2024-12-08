@@ -11,6 +11,7 @@ body {
     background-image: url("./imgs/banner.png");
     background-size: cover;
 }
+
 /* vendor */
 .scrollerContainer .scrollerGroup {
     display: flex;
@@ -18,14 +19,21 @@ body {
     justify-content: start;
     transition: margin 1s;
 }
+
 .scrollerContainer-02 .scrollerGroup-02 {
     display: flex;
     align-items: center;
     justify-content: start;
     transition: margin 1s;
 }
+
 /* event */
 #event {
     background-image: url("./imgs/banner.png");
+    background-size: cover;
+}
+
+#agenda {
+    background-image: url("./imgs/imgBg.jpg");
     background-size: cover;
 }
