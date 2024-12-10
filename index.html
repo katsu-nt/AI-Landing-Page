@@ -43,12 +43,17 @@
               "50%": { transform: "translateY(-10px)" },
               "100%": { transform: "translateY(0)" },
             },
+            shake: {
+              "0%, 100%": { transform: "translateX(0)" },
+              "50%": { transform: "translateX(-5px)" },
+            },
             scroll: {
               "0%": { transform: "translateX(0)" },
             },
           },
           animation: {
             wave: "wave 1s ease-in-out infinite",
+            shake: "shake 0.5s ease-in-out infinite",
           },
         },
       };
@@ -73,7 +78,11 @@
           );
         }
         .my-bg-blue {
-          background: linear-gradient(153deg, rgba(8,0,77,1) 30%, rgba(53,51,205,1) 100%);
+          background: linear-gradient(
+            153deg,
+            rgba(8, 0, 77, 1) 30%,
+            rgba(53, 51, 205, 1) 100%
+          );
         }
       }
     </style>
@@ -92,12 +101,14 @@
           <div
             class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
           >
-            <button
-              type="button"
-              class="text-white bg-my-red hover:bg-my-light-blue transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center"
-            >
-              Đăng ký ngay
-            </button>
+          <button
+          type="button"
+          class="text-white bg-my-red hover:bg-my-light-blue transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center animate-shake hover:animate-none"
+        >
+          Đăng ký ngay
+        </button>
+        
+
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
@@ -195,7 +206,7 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#exhi"
                   class="nav-item block py-2 px-3 rounded md:hover:bg-transparent md:p-0 md:hover:text-my-red text-white hover:text-my-red"
                   >Triễn lãm</a
                 >
@@ -223,8 +234,41 @@
     <main style="margin-top: 69px">
       <section id="about-us">
         <section class="bg-center bg-no-repeat bg-blend-multiply about-us-top">
+          <div class="bg-gray-900 bg-opacity-40">
+          <div class="px-4 flex justify-center md:justify-start text-center pt-12 lg:pt-20 pb-12 lg:pb-20 animate__animated animate__backInDown animate__delay-1.75s">
+            <div class="w-full flex">
+              <article class="flex items-center justify-center">
+                <img
+                  src="./public/imgs/SOYTE.png"
+                  alt="Brand 1"
+                  class="h-14 md:h-20 w-auto "
+                />
+              </article>
+              <article class="flex items-center justify-center">
+                <img
+                  src="./public/imgs/Logo_So_TTTT__Âm_bản_-removebg-preview.png"
+                  alt="Brand 1"
+                  class="h-14 md:h-20 w-auto "
+                />
+              </article>
+              <article class="flex items-center justify-center">
+                <img
+                  src="./public/imgs/DXC.png"
+                  alt="Brand 1"
+                  class="h-14 md:h-20 w-auto "
+                />
+              </article>
+              <article class="flex items-center justify-center">
+                <img
+                  src="./public/imgs/HCA logo 2024 (white).png"
+                  alt="Brand 1"
+                  class="h-14 md:h-20 w-auto "
+                />
+              </article>
+            </div>
+          </div>
           <div
-            class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56 animate__animated animate__backInDown animate__delay-1.75s"
+            class="px-4 mx-auto max-w-screen-xl text-center pb-24 lg:pb-56 animate__animated animate__backInDown animate__delay-1.75s"
           >
             <h1
               class="mb-4 tracking-tight leading-none text-white text-2xl md:text-4xl lg:text-5xl"
@@ -238,7 +282,7 @@
               >
             </h1>
             <p
-              class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48 text-justify"
+              class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 lg:px-48 text-justify"
             >
               Hội nghị quốc tế với chủ đề “Ai in health conference" 2025 được tổ
               chức bởi Sở Y tế TP.Hồ Chí Minh, Sở Truyền Thông & Thông tin
@@ -247,18 +291,18 @@
               phố.
             </p>
             <p
-              class="mb-2 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48 text-justify"
+              class="mb-2 text-lg font-normal text-white lg:text-xl sm:px-16 lg:px-48 text-justify"
             >
               <span>Địa điểm:</span>
-              <span class="text-my-light-blue font-bold"
+              <span class="text-white md:text-my-light-blue font-bold"
                 >Hội trường thành uỷ TP. HCM</span
               >
             </p>
             <p
-              class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48 text-justify"
+              class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 lg:px-48 text-justify"
             >
               <span>Thời gian:</span>
-              <span class="text-my-light-blue font-bold"
+              <span class="text-white md:text-my-light-blue font-bold"
                 >25.02.2024 từ 8h - 17h</span
               >
             </p>
@@ -267,9 +311,9 @@
             >
               <a
                 href="#"
-                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 bg-my-red hover:bg-my-light-blue"
               >
-                Về chúng tôi
+                Đăng ký tham gia ngay
                 <svg
                   class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                   aria-hidden="true"
@@ -294,19 +338,20 @@
               </a>
             </div>
           </div>
+        </div>
         </section>
         <section id="vendor" class="my-bg-white">
           <div
             class="px-4 mx-auto max-w-screen-xl text-center md:text-left py-12 lg:py-24"
           >
             <h1
-              class="text-my-blue uppercase mb-3 md:mb-6 font-bold mb-10 text-2xl md:text-4xl lg:text-5xl"
+              class="text-my-blue uppercase mb-8 md:mb-12 font-bold mb-10 text-2xl md:text-4xl lg:text-5xl"
             >
               Đối tác đồng hành
             </h1>
-            <div class="md:flex md:gap-4 items-center mb-3 md:mb-6">
+            <div class="md:flex md:gap-4 items-center mb-8 md:mb-12">
               <div
-                class="text-my-blue uppercase text-xl md:text-2xl lg:text-3xl text-nowrap flex justify-center md:justify-start items-center gap-2"
+                class="text-my-blue uppercase text-xl mb-6 md:mb-0 md:text-2xl lg:text-3xl text-nowrap flex justify-center md:justify-start items-center gap-2"
               >
                 <span class="text-my-red"
                   ><i class="fa-solid fa-minus"></i
@@ -315,56 +360,58 @@
               </div>
               <div class="overflow-hidden">
                 <div class="flex gap-8 scrollerContainer">
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/DXC.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/ICT.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/SOYTE.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
+                    <img
+                      src="./public/imgs/HCA logo 2024.png"
+                      alt="Brand 1"
+                      class="h-16 md:h-32 w-auto"
+                    />
+                  </article>
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/DXC.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/ICT.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/SOYTE.png"
+                      alt="Brand 1"
+                      class="h-16 md:h-32 w-auto"
+                    />
+                  </article>
+                  <article class="flex items-center justify-center">
+                    <img
+                      src="./public/imgs/HCA logo 2024.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
@@ -372,9 +419,9 @@
                 </div>
               </div>
             </div>
-            <div class="md:flex md:gap-2 items-center mb-3 md:mb-6">
+            <div class="md:flex md:gap-2 items-center mb-8 md:mb-12">
               <div
-                class="text-my-blue uppercase text-xl md:text-2xl lg:text-3xl text-nowrap flex justify-center md:justify-start items-center gap-2"
+                class="text-my-blue uppercase text-xl md:text-2xl mb-6 md:mb-0 lg:text-3xl text-nowrap flex justify-center md:justify-start items-center gap-2"
               >
                 <span class="text-my-red"
                   ><i class="fa-solid fa-minus"></i
@@ -383,56 +430,58 @@
               </div>
               <div class="overflow-hidden">
                 <div class="flex gap-8 scrollerContainer-02">
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/DXC.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/ICT.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/SOYTE.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
+                    <img
+                      src="./public/imgs/HCA logo 2024.png"
+                      alt="Brand 1"
+                      class="h-16 md:h-32 w-auto"
+                    />
+                  </article>
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/DXC.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/ICT.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
                   </article>
-                  <article
-                    class="flex items-center md:justify-start justify-center"
-                  >
+                  <article class="flex items-center justify-center">
                     <img
                       src="./public/imgs/SOYTE.png"
+                      alt="Brand 1"
+                      class="h-16 md:h-32 w-auto"
+                    />
+                  </article>
+                  <article class="flex items-center justify-center">
+                    <img
+                      src="./public/imgs/HCA logo 2024.png"
                       alt="Brand 1"
                       class="h-16 md:h-32 w-auto"
                     />
@@ -442,7 +491,7 @@
             </div>
             <div class="md:flex md:gap-2 items-center">
               <div
-                class="text-my-blue uppercase text-xl md:text-2xl lg:text-3xl text-nowrap flex justify-center md:justify-start items-center gap-2 mb-2"
+                class="text-my-blue uppercase text-xl md:text-2xl mb-6 md:mb-0 lg:text-3xl text-nowrap flex justify-center md:justify-start items-center gap-2 mb-2"
               >
                 <span class="text-my-red"
                   ><i class="fa-solid fa-minus"></i
@@ -453,7 +502,7 @@
                 <img
                   src="public/imgs/2.jpg"
                   alt="Brand 1"
-                  class="h-20 md:h-36 w-auto rounded-full"
+                  class="h-20 md:h-36 w-auto"
                 />
               </div>
             </div>
@@ -473,13 +522,13 @@
               <span class="font-bold block md:inline">Trong y tế</span>
             </h1>
             <p
-              class="my-10 font-bold text-gray-300 sm:px-16 lg:px-48 text-center text-xl md:text-2xl lg:text-3xl"
+              class="my-10 font-bold text-white sm:px-16 lg:px-48 text-center text-xl md:text-2xl lg:text-3xl md:flex justify-center"
             >
-              Thời gian: 25.02.2025
-              <span class="px-2 hidden md:inline">|</span> TP. HCM
+            <span class="font-bold block">Thời gian: 25.02.2025</span>
+            <span class="px-2 hidden md:inline">|</span> <span class="font-bold block">TP. HCM</span>
             </p>
             <div
-              class="flex flex-wrap justify-center items-top space-y-2 text-gray-300 text-left md:text-justify mx-auto px-4 md:w-2/3"
+              class="flex flex-wrap justify-center items-top space-y-2 text-white text-left md:text-justify mx-auto px-4 md:w-2/3"
             >
               <div
                 class="w-full md:w-1/2 p-3 flex justify-between items-center"
@@ -879,7 +928,7 @@
                 data-carousel-prev
               >
                 <span
-                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-2 group-focus:ring-white group-focus:outline-none"
                 >
                   <svg
                     class="w-4 h-4 text-white rtl:rotate-180"
@@ -905,7 +954,7 @@
                 data-carousel-next
               >
                 <span
-                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-2 group-focus:ring-white group-focus:outline-none"
                 >
                   <svg
                     class="w-4 h-4 text-white rtl:rotate-180"
@@ -942,56 +991,44 @@
                 <ol class="relative border-s border-white">
                   <li class="mb-10 ms-4">
                     <div
-                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900"
+                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-gray-900"
                     ></div>
                     <time
                       class="mb-2 text-sm font-semibold leading-none text-white"
                       >09 : 20</time
                     >
-                    <h3
-                      class="text-lg font-semibold text-gray-900 dark:text-white uppercase mb-2"
-                    >
+                    <h3 class="text-lg font-semibold text-white uppercase mb-2">
                       PHIÊN 1: AI LANDSCAPE_ TRAO QUYỀN CHO TƯƠNG LAI
                     </h3>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white">Keynote 1:</span> Kết
                       quả triển khai Y tế thông minh của Thành phố giai đoạn
                       2020 - 2024; Định hướng của Thành phố về bức tranh Y tế
                       thông minh giai đoạn mới 2025 – 2030 (Đại diện Lãnh đạo Sở
                       Y tế Thành phố Hồ Chí Minh)
                     </p>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white">Keynote 2:</span> AI
                       trong Y tế thông minh của thế giới (Chuyên gia từ WHO)
                     </p>
                   </li>
                   <li class="mb-10 ms-4">
                     <div
-                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900"
+                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-gray-900"
                     ></div>
                     <time
                       class="mb-2 text-sm font-semibold leading-none text-white"
                       >10 : 10</time
                     >
-                    <h3
-                      class="text-lg font-semibold text-gray-900 dark:text-white uppercase mb-2"
-                    >
+                    <h3 class="text-lg font-semibold text-white uppercase mb-2">
                       PHIÊN 2: SÁNG TẠO AI TRONG VẬN HÀNH, QUẢN LÝ Y TẾ
                     </h3>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white">Keynote 1:</span> Xây
                       dựng nền tảng dùng chung trong quản lý bệnh án điện tử
                       (Chuyên gia từ Vương Quốc Anh)
                     </p>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white">Keynote 2:</span> Quy
                       trình triển khai hồ sơ sức khỏe điện tử tại Singapore
                       (Chuyên gia từ Singapore)
@@ -999,20 +1036,16 @@
                   </li>
                   <li class="mb-10 ms-4">
                     <div
-                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900"
+                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-gray-900"
                     ></div>
                     <time
                       class="mb-2 text-sm font-semibold leading-none text-white"
                       >10 : 50</time
                     >
-                    <h3
-                      class="text-lg font-semibold text-gray-900 dark:text-white uppercase mb-2"
-                    >
+                    <h3 class="text-lg font-semibold text-white uppercase mb-2">
                       BÀN TRÒN THẢO LUẬN
                     </h3>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       AI có trách nhiệm, đạo đức và minh bạch trong y tế & chăm
                       sóc sức khỏe
                     </p>
@@ -1029,27 +1062,21 @@
                 <ol class="relative border-s border-white">
                   <li class="mb-10 ms-4">
                     <div
-                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900"
+                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-gray-900"
                     ></div>
                     <time
                       class="mb-2 text-sm font-semibold leading-none text-white"
                       >14 : 10</time
                     >
-                    <h3
-                      class="text-lg font-semibold text-gray-900 dark:text-white uppercase mb-2"
-                    >
+                    <h3 class="text-lg font-semibold text-white uppercase mb-2">
                       PHIÊN 3: KHI AI THAM GIA HỘI CHẨN
                     </h3>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white">Keynote:</span> Đi vào
                       các khía cạnh kỹ thuật của AI và công nghệ học sâu trong
                       việc tham gia hội chẩn (Chuyên gia từ Hàn Quốc/ Đài Loan)
                     </p>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white"
                         >Tham luận từ chuyên gia cao cấp của Việt Nam</span
                       >
@@ -1057,26 +1084,20 @@
                   </li>
                   <li class="mb-10 ms-4">
                     <div
-                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900"
+                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-gray-900"
                     ></div>
                     <time
                       class="mb-2 text-sm font-semibold leading-none text-white"
                       >14 : 50</time
                     >
-                    <h3
-                      class="text-lg font-semibold text-gray-900 dark:text-white uppercase mb-2"
-                    >
+                    <h3 class="text-lg font-semibold text-white uppercase mb-2">
                       PHIÊN 4: CHĂM SÓC SỨC KHỎE VỚI AI
                     </h3>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white">Keynote:</span> từ
                       chuyên gia cao cấp của Việt Nam
                     </p>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white"
                         >Tham luận từ chuyên gia cao cấp của Việt Nam</span
                       >
@@ -1084,27 +1105,21 @@
                   </li>
                   <li class="mb-10 ms-4">
                     <div
-                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900"
+                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-gray-900"
                     ></div>
                     <time
                       class="mb-2 text-sm font-semibold leading-none text-white"
                       >15 : 40</time
                     >
-                    <h3
-                      class="text-lg font-semibold text-gray-900 dark:text-white uppercase mb-2"
-                    >
+                    <h3 class="text-lg font-semibold text-white uppercase mb-2">
                       PHIÊN 5: BỆNH VIỆN THÔNG MINH – AI TỐI ƯU HỆ THỐNG VẬN
                       HÀNH VÀ QUẢN TRỊ DỮ LIỆU Y TẾ
                     </h3>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white">Keynote:</span> từ
                       chuyên gia cao cấp của Việt Nam
                     </p>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       <span class="font-bold text-white"
                         >Tham luận từ chuyên gia cao cấp của Việt Nam</span
                       >
@@ -1112,26 +1127,46 @@
                   </li>
                   <li class="mb-10 ms-4">
                     <div
-                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900"
+                      class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-gray-900"
                     ></div>
                     <time
                       class="mb-2 text-sm font-semibold leading-none text-white"
                       >16 : 20</time
                     >
-                    <h3
-                      class="text-lg font-semibold text-gray-900 dark:text-white uppercase mb-2"
-                    >
+                    <h3 class="text-lg font-semibold text-white uppercase mb-2">
                       BÀN TRÒN THẢO LUẬN
                     </h3>
-                    <p
-                      class="mb-4 text-justify font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <p class="mb-4 text-justify font-normal text-white">
                       Tối ưu hệ thống vận hành và quản trị dữ liệu bệnh viện
                       thông minh với camera thông minh (AI Camera View) _ Hanwah
                       Vision
                     </p>
                   </li>
                 </ol>
+              </div>
+              <div class="w-full">
+                <div id="countdown" class="bg-transparent text-white text-center py-6">
+                  <h2 class="text-2xl md:text-3xl font-bold mb-4 md:flex justify-center"><span class="font-bold block">Thời gian: 25.02.2025</span>
+                    <span class="px-2 hidden md:inline">|</span> <span class="font-bold block">TP. HCM</span></h2>
+                  <div class="flex justify-center items-center space-x-4">
+                    <div>
+                      <span id="days" class="text-4xl font-bold block">00</span>
+                      <span class="text-sm uppercase">Ngày</span>
+                    </div>
+                    <div>
+                      <span id="hours" class="text-4xl font-bold block">00</span>
+                      <span class="text-sm uppercase">Giờ</span>
+                    </div>
+                    <div>
+                      <span id="minutes" class="text-4xl font-bold block">00</span>
+                      <span class="text-sm uppercase">Phút</span>
+                    </div>
+                    <div>
+                      <span id="seconds" class="text-4xl font-bold block">00</span>
+                      <span class="text-sm uppercase">Giây</span>
+                    </div>
+                  </div>
+                </div>                
               </div>
             </div>
           </div>
@@ -1409,7 +1444,7 @@
               data-carousel-prev
             >
               <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-2 group-focus:ring-white group-focus:outline-none"
               >
                 <svg
                   class="w-4 h-4 text-white rtl:rotate-180"
@@ -1435,7 +1470,7 @@
               data-carousel-next
             >
               <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-2 group-focus:ring-white group-focus:outline-none"
               >
                 <svg
                   class="w-4 h-4 text-white rtl:rotate-180"

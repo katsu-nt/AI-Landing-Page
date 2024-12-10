@@ -12,6 +12,8 @@ body {
     background-size: cover;
 }
 
+
+
 /* vendor */
 .scrollerContainer .scrollerGroup {
     display: flex;
@@ -28,12 +30,24 @@ body {
 }
 
 /* event */
-#event-info, #agenda {
+#event-info,
+#agenda {
     background-image: url("./imgs/imgBg.jpg");
     background-size: cover;
 }
 
-#exhi{
+#exhi {
     background-image: url("./imgs/imgWhite.png");
     background-size: contain;
+}
+@media only screen and (max-width: 768px) {
+    #about-us .about-us-top {
+        background-image: url("./imgs/banner.png");
+        background-size: cover;
+        background-position: right;
+    }
+    #agenda {
+        background-size: auto;
+        background-position: center;
+    }
 }

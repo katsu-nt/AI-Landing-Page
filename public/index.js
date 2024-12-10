@@ -41,11 +41,17 @@ setInterval(countUpNumbers, 12000)
 //infinite loop
 const config = {
   scrollerSpeed: 3, // seconds
-  scrollerTransitionSpeed: 2, // seconds, must be <= scrollerSpeed
+  scrollerTransitionSpeed: 1, // seconds, must be <= scrollerSpeed
 };
 
 function updateScrollerItemsViewable() {
-  return window.innerWidth >= 1024 ? 4 : 3;
+  if(window.innerWidth>=1024){
+    return 4
+  }else if(window.innerWidth >= 768){
+    return 3
+  }else{
+    return 2
+  }
 }
 
 function initializeScroller(containerSelector, groupClass) {
@@ -128,3 +134,34 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeTimeout = setTimeout(() => initializeResponsiveScroller(), 200);
   });
 });
+
+
+//countdown
+  // Set target date
+  const targetDate = new Date("February 25, 2025 08:00:00").getTime();
+
+  // Update countdown every second
+  const countdownInterval = setInterval(() => {
+    const now = new Date().getTime();
+    const timeLeft = targetDate - now;
+
+    if (timeLeft <= 0) {
+      clearInterval(countdownInterval);
+      document.getElementById("countdown").innerHTML =
+        "<h2 class='text-2xl font-bold'>Sự kiện đã bắt đầu!</h2>";
+      return;
+    }
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    // Update DOM
+    document.getElementById("days").textContent = String(days).padStart(2, '0');
+    document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+  }, 1000);
+
