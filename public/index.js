@@ -16,9 +16,14 @@ navLinks.forEach(link => {
 });
 
 
-//count
+let intervalIds = []; // Lưu trữ các interval ID
+
 function countUpNumbers() {
     const numberElements = document.querySelectorAll('.scope-number');
+
+    // Dừng tất cả các interval cũ
+    intervalIds.forEach(id => clearInterval(id));
+    intervalIds = [];
 
     numberElements.forEach(numberElement => {
         let targetNumber = parseInt(numberElement.textContent);
@@ -32,11 +37,15 @@ function countUpNumbers() {
                 clearInterval(intervalId);
             }
         }, 10);
+
+        // Lưu trữ interval ID để quản lý
+        intervalIds.push(intervalId);
     });
 }
 
-countUpNumbers()
-setInterval(countUpNumbers, 12000)
+// Gọi hàm đếm và lặp lại sau mỗi 12 giây
+countUpNumbers();
+setInterval(countUpNumbers, 12000);
 
 //infinite loop
 const config = {
