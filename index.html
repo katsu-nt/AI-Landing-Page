@@ -73,12 +73,7 @@
           );
         }
         .my-bg-blue {
-          background: linear-gradient(
-            90deg,
-            rgba(2, 0, 36, 1) 0%,
-            rgba(9, 9, 121, 1) 100%,
-            rgba(0, 212, 255, 1) 100%
-          );
+          background: linear-gradient(153deg, rgba(8,0,77,1) 30%, rgba(53,51,205,1) 100%);
         }
       }
     </style>
@@ -86,7 +81,7 @@
   <body>
     <header>
       <nav
-        class="bg-my-blue fixed w-full z-50 top-0 start-0 border-b border-gray-200 border-my-blue"
+        class="my-bg-blue fixed w-full z-50 top-0 start-0 border-b border-gray-200 border-my-blue"
       >
         <div
           class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -106,7 +101,7 @@
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
-              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 hover:ring-white"
               aria-controls="navbar-sticky"
               aria-expanded="false"
             >
@@ -133,12 +128,12 @@
             id="navbar-sticky"
           >
             <ul
-              class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-my-blue dark:border-gray-700"
+              class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent md:bg-transparent"
             >
               <li>
                 <a
                   href="#about-us"
-                  class="nav-item block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:hover:text-my-red text-my-red dark:hover:bg-gray-700 hover:text-my-red md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="nav-item block py-2 px-3 rounded md:hover:bg-transparent md:p-0 md:hover:text-my-red text-my-red hover:text-my-red"
                   >Về chúng tôi</a
                 >
               </li>
@@ -146,7 +141,7 @@
                 <button
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
-                  class="flex items-center justify-between w-full py-2 px-3 text-white nav-item rounded hover:text-my-red md:border-0 md:p-0 md:w-auto dark:border-gray-700"
+                  class="nav-item flex items-center justify-between w-full py-2 px-3 text-white rounded hover:text-my-red md:border-0 md:p-0 md:w-auto"
                 >
                   Sự kiện
                   <svg
@@ -168,30 +163,30 @@
                 <!-- Dropdown menu -->
                 <div
                   id="dropdownNavbar"
-                  class="z-40 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                  class="z-40 hidden font-normal divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-700 divide-gray-600"
                 >
                   <ul
-                    class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                    class="py-2 text-sm text-white"
                     aria-labelledby="dropdownLargeButton"
                   >
                     <li>
                       <a
                         href="#event-info"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        class="block px-4 py-2 hover:bg-gray-500"
                         >Thông tin</a
                       >
                     </li>
                     <li>
                       <a
                         href="#speakers"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        class="block px-4 py-2 hover:bg-gray-500"
                         >Diễn giả</a
                       >
                     </li>
                     <li>
                       <a
                         href="#agenda"
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        class="block px-4 py-2 hover:bg-gray-500"
                         >Lịch trình</a
                       >
                     </li>
@@ -201,14 +196,14 @@
               <li>
                 <a
                   href="#"
-                  class="nav-item block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:hover:text-my-red text-white dark:hover:bg-gray-700 hover:text-my-red md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="nav-item block py-2 px-3 rounded md:hover:bg-transparent md:p-0 md:hover:text-my-red text-white hover:text-my-red"
                   >Triễn lãm</a
                 >
               </li>
               <li>
                 <a
                   href="#news"
-                  class="nav-item block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:hover:text-my-red text-white dark:hover:bg-gray-700 hover:text-my-red md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="nav-item block py-2 px-3 rounded md:hover:bg-transparent md:p-0 md:hover:text-my-red text-white hover:text-my-red"
                   >Tin tức</a
                 >
               </li>
@@ -216,7 +211,7 @@
               <li>
                 <a
                   href="#"
-                  class="nav-item block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:hover:text-my-red text-white dark:hover:bg-gray-700 hover:text-my-red md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="nav-item block py-2 px-3 rounded md:hover:bg-transparent md:p-0 md:hover:text-my-red text-white hover:text-my-red"
                   >English</a
                 >
               </li>
