@@ -165,3 +165,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
   }, 1000);
 
+
+  const scrollTopButton = document.getElementById('scrollTopButton');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollTopButton.classList.remove('hidden'); // Hiện nút khi cuộn xuống
+    } else {
+      scrollTopButton.classList.add('hidden'); // Ẩn nút khi ở đầu trang
+    }
+  });
+
+  scrollTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Cuộn mượt
+    });
+  });
+
